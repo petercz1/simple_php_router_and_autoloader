@@ -13,7 +13,7 @@ class getAbout
 	 */
     public function init():void
     {
-		// capture/process anything h
+		// capture/process anything here, echo response here
         include($_SERVER['DOCUMENT_ROOT']."/frontend/about.html");
     }
 }
