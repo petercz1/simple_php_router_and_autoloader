@@ -13,8 +13,8 @@ class getThanks
 	 */
     public function init():void
     {
-				// capture/process anything here, echo response here,
-		// or send back a static file like this:
+		// capture/process anything here, echo response here,
+		// or send back another file like this:
         include($_SERVER['DOCUMENT_ROOT']."/frontend/thanks.php");
     }
 }
