@@ -8,7 +8,9 @@ About as simple as it gets and still be useful
 
 ## how does it work
 
+`Autoloader.php` scans all files/folders within `classes` (or your choice of folder) for required classes, loads them, and executes a method called `init()`.
 
+`Router.php` translates the route in a browser to a php class and executes the `init()` method in that class.
 
 ## installation
 
@@ -45,4 +47,4 @@ Looks like this:
 ├── index.php
 └── README.md
  ```
-Help yourself to the code, and if it's of any use then a star would be nice (top right...) 
+Help yourself to the code, and if it's of any use then a star would be nice (top right...)
