@@ -8,13 +8,17 @@ About as simple as it gets and still be useful
 
 ## how does it work
 
-`Autoloader.php` scans all files/folders within `/classes` (or your choice of folder) for required classes, loads them, and executes a method called `init()`.
+`autoloader.php` scans all files/folders within `/classes` (or your choice of folder) for required classes, loads them, and executes a method called `init()`.
 
-`Router.php` translates the route in a browser to a php class and executes the `init()` method in that class.
+`router.php` translates the route in a browser to a php class and executes the `init()` method in that class.
+
+## requirements
+
+php 7.x
 
 ## installation
 
-* copy file to a directory of your choice
+* copy files to a directory of your choice
 * open the directory with a terminal/console/cli
 * start with `php -S localhost:4567`
 * use a browser to navigate to `localhost:4567`
@@ -30,20 +34,26 @@ Looks like this:
 -------------------------------------------------------------------------------
  Language            Files        Lines         Code     Comments       Blanks
 -------------------------------------------------------------------------------
- HTML                    2           20           20            0            0
- Markdown                1           24           24            0            0
- PHP                     4          122           67           41           14
+ HTML                    3           40           30            0           10
+ Markdown                1           54           54            0            0
+ PHP                     9          226          120           77           29
 -------------------------------------------------------------------------------
- Total                   7          166          111           41           14
- .
+ Total                  13          320          204           77           39
+.
 ├── classes
 │   ├── autoloader.php
 │   ├── pages
-│   │   └── gethome.php
+│   │   ├── getabout.php
+│   │   ├── gethome.php
+│   │   ├── getregister.php
+│   │   └── getthanks.php
 │   └── router.php
 ├── frontend
+│   ├── about.html
 │   ├── fourohfour.html
-│   └── index.html
+│   ├── index.html
+│   ├── register.php
+│   └── thanks.php
 ├── index.php
 └── README.md
  ```
