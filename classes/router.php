@@ -5,19 +5,21 @@ namespace your\project;
  * simple no-framework skinny router
  */
 class Router
-{    
+{
+    // this is where the magic happens.
+    // this array marries up the path in the browser with a php file that does what you need.
+    // The autoloader looks for eg 'gethome' as 'gethome.php', loads it, and then
+    // lie 40 fires off the 'init()' method for the loaded class
     private $uri = [
         '/'=>'gethome',
-        '/api/getoptions'=>'getOptions',
-        '/api/setoptions'=>'setOptions',
-        '/api/getvideofilesinfo'=>'getVideoFilesInfo',
-        '/api/processvideofilesinfo'=>'postVideoFiles'
+        '/about'=>'getAbout',
+        '/enrol'=> 'getRegister',
+        '/thanks'=>'getThanks'
     ];
 
     /**
      * simple router
-     * assumes that the route and class are named the same
-     * and that an autoloader is used
+     * assumes that an autoloader is used
      *
      * @return void
      */
@@ -34,6 +36,7 @@ class Router
             if (preg_match("#^$routeKey$#", $route)) {
                 $class = __NAMESPACE__ . '\\' . $routeValue;
                 (new $class)->init();
+                // found the path, so set $matched to true to stop 404 being sent
                 $matched = true;
             }
         }
